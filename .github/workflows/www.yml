@@ -33,9 +33,9 @@ jobs:
           -H "Accept: application/vnd.github.everest-preview+json" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: ${{ secrets.GITHUB_TOKEN }}" \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "var1": "variable1", "var2": "variable2" }}' \
-          https://api.github.com/repos/MarcoRezkallah/try-workflow-dispatch/workflows/blank.yml/dispatches
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          --data '{"ref": "master", "inputs": { "var1": "variable1", "var2": "variable2" }}' \
+          https://api.github.com/repos/MarcoRezkallah/try-workflow-dispatch/actions/workflows/blank.yml/dispatches
 
 
       # Runs a set of commands using the runners shell
