@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      var1: "${{ github.ref == 'refs/head/main' && 'main' || (github.ref == 'refs/head/test' && 'test') || null }}"
+      var1: "${{ github.ref == 'refs/head/main' && 'main' || 'test' }}"
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
